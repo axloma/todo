@@ -54,7 +54,7 @@ const mvtdown =(index)=>{
    <span> {task}</span>
 <button onClick={()=> mvtup(index)}>up</button>
 <button onClick={()=>mvtdown(index)}>down</button>
-<button onClick={()=>deltask(index)}>del</button>
+<button onClick={()=>deltask(index)}className="delbtn">del</button>
 
 </li>
 

@@ -76,7 +76,9 @@
   color: aqua;
 
 }
-
+.delbtn{
+  background-color: red;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
