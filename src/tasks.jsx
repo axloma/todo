@@ -6,7 +6,7 @@ import { UserContext } from "./Stopwatch";
 // export const UserContext = createContext();
 import axios from "axios";
 // const apiurl = "http://127.0.0.1:3000"
-const apiurl = "http://c704-41-68-20-237.ngrok-free.app"
+const apiurl = "https://related-bright-cowbird.ngrok-free.app"
 
 function Todolist(props){
     const hell = useContext(UserContext)
@@ -24,7 +24,12 @@ const handletaskinput = (e)=>{
 const fitem = async()=>{
     try{
 
-        const {data} = await axios.get(apiurl)
+        const {data} = await axios.get(apiurl, {
+            method: "get",
+            headers: new Headers({
+              "ngrok-skip-browser-warning": "69420",
+            }),
+          })
         console.log(data)
         setisloading(true)
         settasks([])
