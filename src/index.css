@@ -33,7 +33,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   justify-content: center;
-  background-image: url("body2.jpg");
+  background-image: url("../body2.jpg");
   background-repeat: no-repeat;
   background-size:cover ;
   background-position: center center;
