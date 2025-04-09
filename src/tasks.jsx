@@ -5,7 +5,9 @@ import StropWatch from "./Stopwatch";
 import { UserContext } from "./Stopwatch";
 // export const UserContext = createContext();
 import axios from "axios";
-const apiurl = "http://127.0.0.1:3000"
+// const apiurl = "http://127.0.0.1:3000"
+const apiurl = "http://c704-41-68-20-237.ngrok-free.app"
+
 function Todolist(props){
     const hell = useContext(UserContext)
 
@@ -20,21 +22,28 @@ const handletaskinput = (e)=>{
     setnewtask(e.target.value)
 }
 const fitem = async()=>{
-    const {data} = await axios.get(apiurl)
-    setisloading(true)
-    settasks([])
-    setTimeout(() => {
-        
+    try{
+
+        const {data} = await axios.get(apiurl)
         console.log(data)
-        data.forEach(Element =>{
-            // settasks(Element.name)
-            settasks(t => [...t ,Element.name])
-            console.log(Element.name)
-            fref.current.style.display = "none";
-        })
-        setisloading(false)
-    },2000);
-    return data
+        setisloading(true)
+        settasks([])
+        setTimeout(() => {
+            
+            console.log(data)
+            data.forEach(Element =>{
+                // settasks(Element.name)
+                settasks(t => [...t ,Element.name])
+                console.log(Element.name)
+                fref.current.style.display = "none";
+            })
+            setisloading(false)
+            return data
+        },2000);
+    }catch (error){
+        console.log(error)
+    }
+
 }
 const addtask = ()=>{
     if(newtask.trim() !== ""){

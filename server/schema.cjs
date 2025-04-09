@@ -15,7 +15,9 @@ port = process.env.PORT || 3000;
 function main(){
    
     //connect to db
-    mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    // mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    mongoose.connect(db)
+
   .then(() => console.log('Connected to MongoDB...'))
   .catch(err => console.log('Could not connect to MongoDB...', err));
 
