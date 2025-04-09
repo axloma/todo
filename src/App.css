@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 ;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
   border: 2px solid rgb(194, 63, 63);
   display: flex;
@@ -9,6 +9,8 @@
   justify-content: center;
   box-sizing: border-box;
   min-height: 100vh;
+  /* box-shadow: 0 .5rem 1rem; */
+
 }
 .tasks{
   list-style: none;
@@ -16,21 +18,30 @@
   flex-direction: column;
   /* justify-content: center; */
   gap: 1rem;
+  flex-wrap: wrap;
+  /* box-shadow: 0 .5rem 1rem; */
 
 
 }
 .tasks li {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   justify-content: center;
+  box-shadow: 0 .5rem 1rem;
+
+
 }
 .tasks li span{
-  justify-self:flex-start;
-  align-items: flex-start;
-  justify-content: flex-start;
+  /* justify-self:flex-start; */
+  /* align-items: flex-start; */
+  /* justify-content: flex-start; */
   flex:1;
-
+  background-color: rgb(250, 250, 255);
+  font-size: 1.8rem;
+  color:black;
+  font-weight: bold;
 }
 .taskcontainer{
   display: flex;
@@ -39,6 +50,11 @@
   flex:1;
   flex-direction: column;
   align-items: center;
+  border: 1px solid white;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 .5rem 1rem;
+
 }
 .taskcontainer h2{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -47,6 +63,7 @@
 .taskcontainer input{
   font-size: 2rem;  
   max-width:17rem;
+  border: 2px solid gray;
   /* overflow: hidden; */
   /* height: 10vh; */
 }
@@ -60,24 +77,62 @@
   padding: 0;
 }
 .time{
-  background-color: rgb(194, 63, 63);
+  background-color: #c23f3f;
   border-radius: 20%;
-  border: 10px;
-  /* height: 20vh; */
+  border: none;
+  max-height: 20vh;
   min-width: 50vw;
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
   padding: 0;
   margin: 0;
-
-
   font-size: 3rem;
   color: aqua;
 
 }
-.delbtn{
+.timex{
+  background-color: transparent;
+  color: aqua;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  /* box-shadow: ; */
+  backdrop-filter: blur(2px);
+  line-height: 1.3em;
+
+}
+.STUDYO{
+  position: relative;
+  font-size: 1rem;
+  height: 40px;
+}
+.stopwatch{
+  position: relative;
+  /* top:-30px; */
+  /* background-color: green; */
+  overflow: visible;
+  /* border: 3px solid  #c23f3f; */
+}
+.btnbox button{
+  position: relative;
+  /* top:40px; */
+  border-radius: 8px;
+  /* border: 1px solid transparent; */
+  padding: 0;
+  font-size: 2em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 0;
+}
+.btnbox .delbtn{
   background-color: red;
+}
+.TODO{
+  color:#c23f3f; 
 }
 .logo {
   height: 6em;
@@ -91,7 +146,12 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-
+.done{
+  position: relative;
+  font-size: 2rem;
+  
+  /* top:20rem; */
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -105,6 +165,9 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
+
+
+
 }
 
 .card {
@@ -113,4 +176,12 @@
 
 .read-the-docs {
   color: #888;
+}
+@media screen and (max-width: 700px) {
+  .btnbox{
+    position: relative;
+    background-color: green;
+    top:0;
+  }
+  
 }

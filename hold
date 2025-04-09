@@ -1,0 +1,61 @@
+hold
+const username = "yasseremad556" ;
+const password = "yaso136";
+const url = `mongodb+srv://${username}:${password}@node.qyfwage.mongodb.net/dbname?retryWrites=true&w=majority&appName=NODE`
+const surl = "http://127.0.0.1:3001/api/v1/people";
+// const surl = "http://127.0.0.1:3000/";
+
+let tasks = []
+let liste = new Array();
+
+// get
+ useEffect(()=>{
+    //use fetch TODO get data from apiserver 
+    const fitem = async()=>{
+        try {
+            const response = await fetch(surl)
+            //get the statuscode
+            console.log(response.status)
+            //check response
+            if(!response.ok) throw Error("COULD NOT LOAD ");
+            const listitems = await response.json();
+            console.log(listitems,"LISITEMSNOw");
+            // settasks(listitems[0])  
+            const { tasks } = listitems; //TODO distructure it if return multible object
+            // const  tasks  = listitems; 
+
+            // let {data: {tasks}} = await axios.get(surl)
+          
+            // setItems(tasks)
+
+            // setItems(i => [...i,tasks])
+            console.log("DONE");
+            // console.log(liste)
+            // tasks.forEach(element => {
+            //     // liste.push(element)
+            //     setItems(i =>[...i,element])
+            // })
+            // setItems(tasks)
+            console.log(tasks,"LIST")
+            setItems(tasks)
+          
+            // console.log("LEN",tasks.length)
+        } catch (error) {  
+            //log error
+            console.log(error.stack)  
+            console.log(error.message)  
+            
+        }finally{
+            setisloading(false)
+        }
+
+    }
+    //TODO CALL THE FUNCTION 
+    // fitem();
+    //or 
+    setTimeout(() => {
+      
+        fitem();
+        // (async ()=> await fitem())()
+    }, 2000);
+},[])

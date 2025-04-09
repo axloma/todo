@@ -27,11 +27,17 @@ a:hover {
 
 body {
   margin: 0;
+  padding:0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
   justify-content: center;
+  background-image: url("body2.jpg");
+  background-repeat: no-repeat;
+  background-size:cover ;
+  background-position: center center;
+  /* background-attachment:; */
   /* overflow: hidden; */
 }
 
@@ -70,4 +76,5 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+  
 }
