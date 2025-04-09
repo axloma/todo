@@ -57,7 +57,7 @@ const addtask = ()=>{
     }
 }
 const deltask = async(index,task) => {
-    const {data } = await axios.delete(`${apiurl}/${task}`)
+    const {data } = await axios.delete(`${apiurl}/add/${task}`)
     console.log(data)
     settasks(tasks.filter((_,i) => i !== index ))
 
